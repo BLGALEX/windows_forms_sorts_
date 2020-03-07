@@ -21,5 +21,10 @@ namespace Sorts_interface
         {
             
         }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }
