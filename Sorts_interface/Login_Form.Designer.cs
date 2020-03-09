@@ -45,6 +45,8 @@
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.AutoSize = true;
             this.button1.BackColor = System.Drawing.SystemColors.Window;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(340, 410);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
@@ -58,6 +60,8 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.AutoSize = true;
             this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(340, 350);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 40);
@@ -70,6 +74,8 @@
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.AutoSize = true;
             this.button3.BackColor = System.Drawing.SystemColors.Window;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(340, 290);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 40);
@@ -82,6 +88,8 @@
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.AutoSize = true;
             this.button4.BackColor = System.Drawing.SystemColors.Window;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(340, 230);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 40);
@@ -94,6 +102,8 @@
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button5.AutoSize = true;
             this.button5.BackColor = System.Drawing.SystemColors.Window;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(340, 170);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 40);
@@ -118,6 +128,8 @@
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button6.AutoSize = true;
             this.button6.BackColor = System.Drawing.SystemColors.Window;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.Location = new System.Drawing.Point(634, 474);
             this.button6.Name = "button6";
@@ -128,9 +140,9 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.White;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(285, 38);
+            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(282, 38);
             this.maskedTextBox1.Mask = "00000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(61, 30);
@@ -139,7 +151,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(239, 38);
             this.label2.Name = "label2";
