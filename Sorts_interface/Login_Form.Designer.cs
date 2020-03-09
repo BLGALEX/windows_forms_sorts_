@@ -140,9 +140,10 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.Window;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Aquamarine;
             this.label1.Location = new System.Drawing.Point(337, 474);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 47);
@@ -172,22 +173,26 @@
             // 
             // maskedTextBox1
             // 
-            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.maskedTextBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(282, 38);
+            this.maskedTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.maskedTextBox1.ForeColor = System.Drawing.Color.Aquamarine;
+            this.maskedTextBox1.Location = new System.Drawing.Point(285, 45);
             this.maskedTextBox1.Mask = "00000";
             this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(61, 30);
+            this.maskedTextBox1.Size = new System.Drawing.Size(61, 23);
             this.maskedTextBox1.TabIndex = 8;
             this.maskedTextBox1.ValidatingType = typeof(int);
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(239, 38);
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.Aquamarine;
+            this.label2.Location = new System.Drawing.Point(240, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 30);
+            this.label2.Size = new System.Drawing.Size(46, 23);
             this.label2.TabIndex = 9;
             this.label2.Text = "N =";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;

@@ -46,5 +46,10 @@ namespace Sorts_interface
         {
             button7.Focus();
         }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            
+        }
     }
 }
