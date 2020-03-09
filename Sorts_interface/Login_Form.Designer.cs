@@ -38,15 +38,21 @@
             this.button6 = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Aquamarine;
             this.button1.Location = new System.Drawing.Point(340, 410);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 40);
@@ -59,57 +65,78 @@
             // 
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.SystemColors.Window;
-            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Aquamarine;
             this.button2.Location = new System.Drawing.Point(340, 350);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 1;
             this.button2.Text = "LSD sort";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
             this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.SystemColors.Window;
-            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button3.FlatAppearance.BorderSize = 2;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Aquamarine;
             this.button3.Location = new System.Drawing.Point(340, 290);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 40);
             this.button3.TabIndex = 2;
             this.button3.Text = "introsort";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
             this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.SystemColors.Window;
-            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.Color.Aquamarine;
             this.button4.Location = new System.Drawing.Point(340, 230);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 40);
             this.button4.TabIndex = 3;
             this.button4.Text = "Insertion sort";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
             this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.SystemColors.Window;
-            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button5.FlatAppearance.BorderSize = 2;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.Color.Aquamarine;
             this.button5.Location = new System.Drawing.Point(340, 170);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(120, 40);
             this.button5.TabIndex = 4;
             this.button5.Text = "quick sort";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -127,16 +154,21 @@
             // 
             this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button6.AutoSize = true;
-            this.button6.BackColor = System.Drawing.SystemColors.Window;
-            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button6.FlatAppearance.BorderSize = 2;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.Color.Aquamarine;
             this.button6.Location = new System.Drawing.Point(634, 474);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(141, 47);
             this.button6.TabIndex = 6;
             this.button6.Text = "Save data";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // maskedTextBox1
             // 
@@ -160,12 +192,22 @@
             this.label2.Text = "N =";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(185, 231);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(0, 0);
+            this.button7.TabIndex = 10;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.button6);
@@ -193,5 +235,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button7;
     }
 }
