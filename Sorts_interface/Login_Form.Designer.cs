@@ -41,7 +41,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.ConsoleOut = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -145,13 +145,13 @@
             // 
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Aquamarine;
             this.label1.Location = new System.Drawing.Point(337, 474);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 47);
             this.label1.TabIndex = 5;
-            this.label1.Text = "No data";
+            this.label1.Text = "Нет данных";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button6
@@ -181,7 +181,6 @@
             this.array_size_input.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.array_size_input.ForeColor = System.Drawing.Color.Aquamarine;
             this.array_size_input.Location = new System.Drawing.Point(285, 45);
-            this.array_size_input.Mask = "00000";
             this.array_size_input.Name = "array_size_input";
             this.array_size_input.Size = new System.Drawing.Size(61, 23);
             this.array_size_input.TabIndex = 8;
@@ -189,7 +188,7 @@
             // 
             // label2
             // 
-            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.Aquamarine;
             this.label2.Location = new System.Drawing.Point(240, 45);
@@ -246,25 +245,30 @@
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // label3
+            // ConsoleOut
             // 
-            this.label3.BackColor = System.Drawing.Color.Black;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.Aquamarine;
-            this.label3.Location = new System.Drawing.Point(31, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 291);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "label3";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.ConsoleOut.BackColor = System.Drawing.Color.Black;
+            this.ConsoleOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConsoleOut.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ConsoleOut.ForeColor = System.Drawing.Color.Aquamarine;
+            this.ConsoleOut.Location = new System.Drawing.Point(12, 45);
+            this.ConsoleOut.Multiline = true;
+            this.ConsoleOut.Name = "ConsoleOut";
+            this.ConsoleOut.ReadOnly = true;
+            this.ConsoleOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ConsoleOut.Size = new System.Drawing.Size(222, 409);
+            this.ConsoleOut.TabIndex = 13;
+            this.ConsoleOut.Text = "Задайте количество\r\nэлементов массива";
+            this.ConsoleOut.UseWaitCursor = true;
             // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Fuchsia;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(782, 553);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ConsoleOut);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -301,6 +305,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox ConsoleOut;
     }
 }

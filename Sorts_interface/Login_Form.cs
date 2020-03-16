@@ -71,12 +71,12 @@ namespace Sorts_interface
         {
             button7.Focus();
             String array_size = array_size_input.Text;
-            Sorts.set_N(array_size);
+            array_size = Sorts.set_N(array_size);
+            System.Threading.Thread.Sleep(500);
+            ConsoleOut.Text += System.Environment.NewLine;
+            ConsoleOut.Text += "Массив создан успешно";
+        
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
