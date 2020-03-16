@@ -47,9 +47,24 @@ namespace Sorts_interface
             button7.Focus();
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        Point last_point;
+        private void Login_Form_MouseMove(object sender, MouseEventArgs e)
         {
-            
+            if(e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - last_point.X;
+                this.Top += e.Y - last_point.Y;
+            }
+        }
+
+        private void Login_Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            last_point = new Point(e.X, e.Y);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
