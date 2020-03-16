@@ -181,6 +181,7 @@
             this.array_size_input.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.array_size_input.ForeColor = System.Drawing.Color.Aquamarine;
             this.array_size_input.Location = new System.Drawing.Point(285, 45);
+            this.array_size_input.Mask = "00000";
             this.array_size_input.Name = "array_size_input";
             this.array_size_input.Size = new System.Drawing.Size(61, 23);
             this.array_size_input.TabIndex = 8;
@@ -267,6 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Fuchsia;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(782, 553);
             this.Controls.Add(this.ConsoleOut);
             this.Controls.Add(this.button9);
@@ -283,6 +285,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login_Form";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Login_Form_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Login_Form_MouseMove);

@@ -71,12 +71,21 @@ namespace Sorts_interface
         {
             button7.Focus();
             String array_size = array_size_input.Text;
-            array_size = Sorts.set_N(array_size);
-            System.Threading.Thread.Sleep(50);
-            ConsoleOut.Text += System.Environment.NewLine;
-            ConsoleOut.Text += "Массив создан успешно";
-        
+            if (array_size != "")
+            {
+                array_size = Sorts.set_N(array_size);
+                System.Threading.Thread.Sleep(50);
+                ConsoleOut.Text += System.Environment.NewLine;
+                ConsoleOut.Text += "Массив создан успешно";
+            }
+            else
+            {
+                System.Threading.Thread.Sleep(50);
+                ConsoleOut.Text += System.Environment.NewLine;
+                ConsoleOut.Text += "Введите число";
+            }
         }
 
+        
     }
 }
