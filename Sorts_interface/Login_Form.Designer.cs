@@ -40,6 +40,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -224,12 +226,46 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button9
+            // 
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.button9.FlatAppearance.BorderSize = 2;
+            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button9.ForeColor = System.Drawing.Color.Aquamarine;
+            this.button9.Location = new System.Drawing.Point(352, 41);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(52, 34);
+            this.button9.TabIndex = 12;
+            this.button9.Text = "Set";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.Aquamarine;
+            this.label3.Location = new System.Drawing.Point(31, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 291);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "label3";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
@@ -264,5 +300,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label3;
     }
 }

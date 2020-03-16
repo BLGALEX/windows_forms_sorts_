@@ -66,5 +66,17 @@ namespace Sorts_interface
         {
             this.Close();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            button7.Focus();
+            String array_size = array_size_input.Text;
+            Sorts.set_N(array_size);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
