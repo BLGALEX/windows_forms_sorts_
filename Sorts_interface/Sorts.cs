@@ -12,7 +12,7 @@ namespace Sorts_interface
         static private int N = 0;
         static private int[] original_array = new int[N];
         public int[] array = new int[N];
-
+        private Double time = 0;
 
         public Sorts()
         {
@@ -39,7 +39,25 @@ namespace Sorts_interface
             return str;
         }
 
-
-
+        public void bubbleSort()
+        {
+            int temp;
+            Int64 time1, time2;
+            for (int i =0; i<N;i++)
+            {
+                array[i] = original_array[i];
+            }
+            time1 = DateTime.Now.Ticks;
+            for (int i=0; i<N;i++)
+                for(int j =0; j<N-i-1;j++)
+                    if(array[j]>array[j+1])
+                    {
+                        temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+            time2 = DateTime.Now.Ticks;
+            time = (double)(time2 - time1) / (double)10000000;
+        }
     }
 }

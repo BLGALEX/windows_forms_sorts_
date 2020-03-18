@@ -16,12 +16,13 @@ namespace Sorts_interface
         public Login_Form()
         {
             InitializeComponent();
-            
+            button7.Focus();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             button7.Focus();
+            main_sorts.bubbleSort();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace Sorts_interface
 
         private void button8_Click(object sender, EventArgs e)
         {
+            button7.Focus();
             this.Close();
         }
 

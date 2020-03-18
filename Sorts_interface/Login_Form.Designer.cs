@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.bubble_sort = new System.Windows.Forms.Button();
+            this.LSD_sort = new System.Windows.Forms.Button();
+            this.introsort = new System.Windows.Forms.Button();
+            this.Insertion_sot = new System.Windows.Forms.Button();
+            this.quick_sort = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.array_size_input = new System.Windows.Forms.MaskedTextBox();
@@ -45,102 +45,102 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // bubble_sort
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button1.Location = new System.Drawing.Point(340, 410);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 40);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "bubble sort";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bubble_sort.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bubble_sort.AutoSize = true;
+            this.bubble_sort.BackColor = System.Drawing.Color.Transparent;
+            this.bubble_sort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bubble_sort.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.bubble_sort.FlatAppearance.BorderSize = 2;
+            this.bubble_sort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.bubble_sort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.bubble_sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bubble_sort.ForeColor = System.Drawing.Color.Aquamarine;
+            this.bubble_sort.Location = new System.Drawing.Point(340, 410);
+            this.bubble_sort.Name = "bubble_sort";
+            this.bubble_sort.Size = new System.Drawing.Size(120, 40);
+            this.bubble_sort.TabIndex = 0;
+            this.bubble_sort.Text = "bubble sort";
+            this.bubble_sort.UseVisualStyleBackColor = false;
+            this.bubble_sort.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // LSD_sort
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button2.Location = new System.Drawing.Point(340, 350);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "LSD sort";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.LSD_sort.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LSD_sort.AutoSize = true;
+            this.LSD_sort.BackColor = System.Drawing.Color.Transparent;
+            this.LSD_sort.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.LSD_sort.FlatAppearance.BorderSize = 2;
+            this.LSD_sort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.LSD_sort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.LSD_sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LSD_sort.ForeColor = System.Drawing.Color.Aquamarine;
+            this.LSD_sort.Location = new System.Drawing.Point(340, 350);
+            this.LSD_sort.Name = "LSD_sort";
+            this.LSD_sort.Size = new System.Drawing.Size(120, 40);
+            this.LSD_sort.TabIndex = 1;
+            this.LSD_sort.Text = "LSD sort";
+            this.LSD_sort.UseVisualStyleBackColor = false;
+            this.LSD_sort.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // introsort
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button3.FlatAppearance.BorderSize = 2;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button3.Location = new System.Drawing.Point(340, 290);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "introsort";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.introsort.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.introsort.AutoSize = true;
+            this.introsort.BackColor = System.Drawing.Color.Transparent;
+            this.introsort.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.introsort.FlatAppearance.BorderSize = 2;
+            this.introsort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.introsort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.introsort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.introsort.ForeColor = System.Drawing.Color.Aquamarine;
+            this.introsort.Location = new System.Drawing.Point(340, 290);
+            this.introsort.Name = "introsort";
+            this.introsort.Size = new System.Drawing.Size(120, 40);
+            this.introsort.TabIndex = 2;
+            this.introsort.Text = "introsort";
+            this.introsort.UseVisualStyleBackColor = false;
+            this.introsort.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // Insertion_sot
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button4.Location = new System.Drawing.Point(340, 230);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 40);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Insertion sort";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Insertion_sot.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Insertion_sot.AutoSize = true;
+            this.Insertion_sot.BackColor = System.Drawing.Color.Transparent;
+            this.Insertion_sot.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.Insertion_sot.FlatAppearance.BorderSize = 2;
+            this.Insertion_sot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Insertion_sot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.Insertion_sot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Insertion_sot.ForeColor = System.Drawing.Color.Aquamarine;
+            this.Insertion_sot.Location = new System.Drawing.Point(340, 230);
+            this.Insertion_sot.Name = "Insertion_sot";
+            this.Insertion_sot.Size = new System.Drawing.Size(120, 40);
+            this.Insertion_sot.TabIndex = 3;
+            this.Insertion_sot.Text = "Insertion sort";
+            this.Insertion_sot.UseVisualStyleBackColor = false;
+            this.Insertion_sot.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // quick_sort
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button5.Location = new System.Drawing.Point(340, 170);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "quick sort";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.quick_sort.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.quick_sort.AutoSize = true;
+            this.quick_sort.BackColor = System.Drawing.Color.Transparent;
+            this.quick_sort.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.quick_sort.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.quick_sort.FlatAppearance.BorderSize = 2;
+            this.quick_sort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.quick_sort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.quick_sort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.quick_sort.ForeColor = System.Drawing.Color.Aquamarine;
+            this.quick_sort.Location = new System.Drawing.Point(340, 170);
+            this.quick_sort.Name = "quick_sort";
+            this.quick_sort.Size = new System.Drawing.Size(120, 40);
+            this.quick_sort.TabIndex = 4;
+            this.quick_sort.Text = "quick sort";
+            this.quick_sort.UseVisualStyleBackColor = false;
+            this.quick_sort.Click += new System.EventHandler(this.button5_Click);
             // 
             // label1
             // 
@@ -266,15 +266,16 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.Black;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox1.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.textBox1.Location = new System.Drawing.Point(493, 41);
+            this.textBox1.Location = new System.Drawing.Point(501, 41);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(222, 409);
+            this.textBox1.Size = new System.Drawing.Size(147, 409);
             this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "Задайте количество\r\nэлементов массива";
+            this.textBox1.Text = "Ожидание...";
             // 
             // Login_Form
             // 
@@ -293,11 +294,11 @@
             this.Controls.Add(this.array_size_input);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.quick_sort);
+            this.Controls.Add(this.Insertion_sot);
+            this.Controls.Add(this.introsort);
+            this.Controls.Add(this.LSD_sort);
+            this.Controls.Add(this.bubble_sort);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -311,11 +312,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button bubble_sort;
+        private System.Windows.Forms.Button LSD_sort;
+        private System.Windows.Forms.Button introsort;
+        private System.Windows.Forms.Button Insertion_sot;
+        private System.Windows.Forms.Button quick_sort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.MaskedTextBox array_size_input;
@@ -325,5 +326,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox ConsoleOut;
         private System.Windows.Forms.TextBox textBox1;
+      
     }
 }
