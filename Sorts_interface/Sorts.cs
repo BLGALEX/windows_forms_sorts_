@@ -6,25 +6,40 @@ using System.Threading.Tasks;
 
 namespace Sorts_interface
 {
-    static class Sorts
+    class Sorts
     {
 
         static private int N = 0;
-        static private int[] array = new int[N];
+        static private int[] original_array = new int[N];
+        public int[] array = new int[N];
 
-       static public String set_N(String str)
+
+        public Sorts()
         {
+            N = 0;
+        }
+        public String set_N(String str)
+        {
+            if (str.Length > 6 || str == "")
+                return "";
+            for(int i =0; i <str.Length;i++)
+            {
+                if (!(str[i] >= '0' && str[i] <= '9'))
+                    return "";
+            }
             N = Convert.ToInt32(str);
+            original_array = new int[N];
             array = new int[N];
             var rand = new Random();
-            for(int i =0; i < N; i++)
+            for (int i = 0; i < N; i++)
             {
-                array[i] = rand.Next() % 32768;
+                original_array[i] = rand.Next() % 32768;
             }
             str = "Успех";
             return str;
         }
-        
+
+
 
     }
 }

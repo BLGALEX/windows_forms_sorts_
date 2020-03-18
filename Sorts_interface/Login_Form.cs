@@ -12,9 +12,11 @@ namespace Sorts_interface
 {
     public partial class Login_Form : Form
     {
+        Sorts main_sorts = new Sorts();
         public Login_Form()
         {
             InitializeComponent();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,21 +73,24 @@ namespace Sorts_interface
         {
             button7.Focus();
             String array_size = array_size_input.Text;
+            array_size = main_sorts.set_N(array_size);
             if (array_size != "")
             {
-                array_size = Sorts.set_N(array_size);
                 System.Threading.Thread.Sleep(50);
                 ConsoleOut.Text += System.Environment.NewLine;
                 ConsoleOut.Text += "Массив создан успешно";
+                array_size_input.Text = "";
             }
             else
             {
                 System.Threading.Thread.Sleep(50);
                 ConsoleOut.Text += System.Environment.NewLine;
-                ConsoleOut.Text += "Введите число";
+                ConsoleOut.Text += System.Environment.NewLine;
+                ConsoleOut.Text += "Введите число разрядности не больше шести без знаков и пробелов";
+                array_size_input.Text = "";
             }
         }
 
-        
+       
     }
 }

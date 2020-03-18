@@ -180,12 +180,10 @@
             this.array_size_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.array_size_input.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.array_size_input.ForeColor = System.Drawing.Color.Aquamarine;
-            this.array_size_input.Location = new System.Drawing.Point(285, 45);
-            this.array_size_input.Mask = "00000";
+            this.array_size_input.Location = new System.Drawing.Point(286, 45);
             this.array_size_input.Name = "array_size_input";
-            this.array_size_input.Size = new System.Drawing.Size(61, 23);
+            this.array_size_input.Size = new System.Drawing.Size(60, 23);
             this.array_size_input.TabIndex = 8;
-            this.array_size_input.ValidatingType = typeof(int);
             // 
             // label2
             // 
