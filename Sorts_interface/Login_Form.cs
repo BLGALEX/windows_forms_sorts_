@@ -91,6 +91,28 @@ namespace Sorts_interface
             }
         }
 
-       
+        private void array_size_input_KeyDown(object sender, KeyEventArgs e) //нужно убрать звук при нажатии enter
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                String array_size = array_size_input.Text;
+                array_size = main_sorts.set_N(array_size);
+                if (array_size != "")
+                {
+                    System.Threading.Thread.Sleep(50);
+                    ConsoleOut.Text += System.Environment.NewLine;
+                    ConsoleOut.Text += "Массив создан успешно";
+                    array_size_input.Text = "";
+                }
+                else
+                {
+                    System.Threading.Thread.Sleep(50);
+                    ConsoleOut.Text += System.Environment.NewLine;
+                    ConsoleOut.Text += System.Environment.NewLine;
+                    ConsoleOut.Text += "Введите число разрядности не больше шести без знаков и пробелов";
+                    array_size_input.Text = "";
+                }
+            }
+        }
     }
 }

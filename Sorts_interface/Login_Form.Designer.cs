@@ -42,6 +42,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.ConsoleOut = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -184,6 +185,7 @@
             this.array_size_input.Name = "array_size_input";
             this.array_size_input.Size = new System.Drawing.Size(60, 23);
             this.array_size_input.TabIndex = 8;
+            this.array_size_input.KeyDown += new System.Windows.Forms.KeyEventHandler(this.array_size_input_KeyDown);
             // 
             // label2
             // 
@@ -248,6 +250,7 @@
             // 
             this.ConsoleOut.BackColor = System.Drawing.Color.Black;
             this.ConsoleOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConsoleOut.Cursor = System.Windows.Forms.Cursors.Default;
             this.ConsoleOut.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ConsoleOut.ForeColor = System.Drawing.Color.Aquamarine;
             this.ConsoleOut.Location = new System.Drawing.Point(12, 45);
@@ -258,7 +261,20 @@
             this.ConsoleOut.Size = new System.Drawing.Size(222, 409);
             this.ConsoleOut.TabIndex = 13;
             this.ConsoleOut.Text = "Задайте количество\r\nэлементов массива";
-            this.ConsoleOut.UseWaitCursor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.ForeColor = System.Drawing.Color.Aquamarine;
+            this.textBox1.Location = new System.Drawing.Point(493, 41);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBox1.Size = new System.Drawing.Size(222, 409);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "Задайте количество\r\nэлементов массива";
             // 
             // Login_Form
             // 
@@ -268,6 +284,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ConsoleOut);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -307,5 +324,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox ConsoleOut;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
