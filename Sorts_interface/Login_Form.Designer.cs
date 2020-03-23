@@ -34,7 +34,7 @@
             this.introsort = new System.Windows.Forms.Button();
             this.Insertion_sot = new System.Windows.Forms.Button();
             this.quick_sort = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.TimeOut = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.array_size_input = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.ConsoleOut = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.ConsoleOut2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bubble_sort
@@ -63,7 +63,7 @@
             this.bubble_sort.TabIndex = 0;
             this.bubble_sort.Text = "bubble sort";
             this.bubble_sort.UseVisualStyleBackColor = false;
-            this.bubble_sort.Click += new System.EventHandler(this.button1_Click);
+            this.bubble_sort.Click += new System.EventHandler(this.bubble_sort_Click);
             // 
             // LSD_sort
             // 
@@ -142,18 +142,18 @@
             this.quick_sort.UseVisualStyleBackColor = false;
             this.quick_sort.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label1
+            // TimeOut
             // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.label1.Location = new System.Drawing.Point(337, 474);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 47);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Нет данных";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.TimeOut.BackColor = System.Drawing.Color.Black;
+            this.TimeOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TimeOut.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.TimeOut.ForeColor = System.Drawing.Color.Aquamarine;
+            this.TimeOut.Location = new System.Drawing.Point(337, 474);
+            this.TimeOut.Name = "TimeOut";
+            this.TimeOut.Size = new System.Drawing.Size(291, 47);
+            this.TimeOut.TabIndex = 5;
+            this.TimeOut.Text = "Нет данных";
+            this.TimeOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button6
             // 
@@ -262,20 +262,21 @@
             this.ConsoleOut.TabIndex = 13;
             this.ConsoleOut.Text = "Задайте количество\r\nэлементов массива";
             // 
-            // textBox1
+            // ConsoleOut2
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Black;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox1.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.textBox1.Location = new System.Drawing.Point(501, 41);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(147, 409);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "Ожидание...";
+            this.ConsoleOut2.BackColor = System.Drawing.Color.Black;
+            this.ConsoleOut2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ConsoleOut2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.ConsoleOut2.Font = new System.Drawing.Font("Lucida Console", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ConsoleOut2.ForeColor = System.Drawing.Color.Aquamarine;
+            this.ConsoleOut2.Location = new System.Drawing.Point(501, 41);
+            this.ConsoleOut2.MaxLength = 1000000;
+            this.ConsoleOut2.Multiline = true;
+            this.ConsoleOut2.Name = "ConsoleOut2";
+            this.ConsoleOut2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ConsoleOut2.Size = new System.Drawing.Size(147, 409);
+            this.ConsoleOut2.TabIndex = 14;
+            this.ConsoleOut2.Text = "Ожидание...";
             // 
             // Login_Form
             // 
@@ -285,7 +286,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(782, 553);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.ConsoleOut2);
             this.Controls.Add(this.ConsoleOut);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -293,7 +294,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.array_size_input);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.TimeOut);
             this.Controls.Add(this.quick_sort);
             this.Controls.Add(this.Insertion_sot);
             this.Controls.Add(this.introsort);
@@ -317,7 +318,7 @@
         private System.Windows.Forms.Button introsort;
         private System.Windows.Forms.Button Insertion_sot;
         private System.Windows.Forms.Button quick_sort;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label TimeOut;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.MaskedTextBox array_size_input;
         private System.Windows.Forms.Label label2;
@@ -325,7 +326,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox ConsoleOut;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ConsoleOut2;
       
     }
 }

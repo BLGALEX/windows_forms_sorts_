@@ -12,7 +12,7 @@ namespace Sorts_interface
         static private int N = 0;
         static private int[] original_array = new int[N];
         public int[] array = new int[N];
-        private Double time = 0;
+        public Double time = 0;
 
         public Sorts()
         {

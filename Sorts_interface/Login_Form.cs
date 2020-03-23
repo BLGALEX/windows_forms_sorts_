@@ -19,10 +19,20 @@ namespace Sorts_interface
             button7.Focus();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bubble_sort_Click(object sender, EventArgs e)
         {
             button7.Focus();
             main_sorts.bubbleSort();
+            ConsoleOut2.Text = "";
+            String Text = new string( '1',main_sorts.array.Length * 7);
+            Text = "";
+            for(int i =0; i < main_sorts.array.Length; i++)
+            {
+                Text += main_sorts.array[i];
+                Text += System.Environment.NewLine;
+            }
+            ConsoleOut2.Text = Text;
+            TimeOut.Text = "Time: " + main_sorts.time;
         }
 
         private void button4_Click(object sender, EventArgs e)
