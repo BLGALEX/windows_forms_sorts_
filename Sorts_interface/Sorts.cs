@@ -38,7 +38,6 @@ namespace Sorts_interface
             str = "Успех";
             return str;
         }
-
         public void bubbleSort()
         {
             int temp;
@@ -58,6 +57,50 @@ namespace Sorts_interface
                     }
             time2 = DateTime.Now.Ticks;
             time = (double)(time2 - time1) / (double)10000000;
+        }
+        public void QuickSort()
+        {
+            Int64 time1, time2;
+            for (int i = 0; i < N; i++)
+            {
+                array[i] = original_array[i];
+            }
+            time1 = DateTime.Now.Ticks;
+            realQuickSort(array, 0, array.Length - 1);
+            time2 = DateTime.Now.Ticks;
+            time = (double)(time2 - time1) / (double)10000000;
+        }
+        private void realQuickSort(int[] arr, int left, int right)
+        {
+                int pivot; // разрешающий элемент
+                int l_hold = left; //левая граница
+                int r_hold = right; // правая граница
+                pivot = arr[left];
+                while (left < right) // пока границы не сомкнутся
+                {
+                    while ((arr[right] >= pivot) && (left < right))
+                        right--; // сдвигаем правую границу пока элемент [right] больше [pivot]
+                    if (left != right) // если границы не сомкнулись
+                    {
+                        arr[left] = arr[right]; // перемещаем элемент [right] на место разрешающего
+                        left++; // сдвигаем левую границу вправо
+                    }
+                    while ((arr[left] <= pivot) && (left < right))
+                        left++; // сдвигаем левую границу пока элемент [left] меньше [pivot]
+                    if (left != right) // если границы не сомкнулись
+                    {
+                        arr[right] = arr[left]; // перемещаем элемент [left] на место [right]
+                        right--; // сдвигаем правую границу вправо
+                    }
+                }
+                arr[left] = pivot; // ставим разрешающий элемент на место
+                pivot = left;
+                left = l_hold;
+                right = r_hold;
+                if (left < pivot) // Рекурсивно вызываем сортировку для левой и правой части массива
+                    realQuickSort(arr, left, pivot - 1);
+                if (right > pivot)
+                    realQuickSort(arr, pivot + 1, right);
         }
     }
 }

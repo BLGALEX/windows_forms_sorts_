@@ -19,43 +19,52 @@ namespace Sorts_interface
             button7.Focus();
         }
 
-        private void bubble_sort_Click(object sender, EventArgs e)
+        private void cout_result()
         {
-            button7.Focus();
-            main_sorts.bubbleSort();
             ConsoleOut2.Text = "";
-            String Text = new string( '1',main_sorts.array.Length * 7);
+            String Text = new string('1', main_sorts.array.Length * 7);
             Text = "";
-            for(int i =0; i < main_sorts.array.Length; i++)
+            for (int i = 0; i < main_sorts.array.Length; i++)
             {
                 Text += main_sorts.array[i];
                 Text += System.Environment.NewLine;
             }
             ConsoleOut2.Text = Text;
             TimeOut.Text = "Time: " + main_sorts.time;
+            Cursor = System.Windows.Forms.Cursors.Arrow;
+        }
+        private void bubble_sort_Click(object sender, EventArgs e)
+        {
+            Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            button7.Focus();
+            main_sorts.bubbleSort();
+            cout_result();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Insertion_sort_Click(object sender, EventArgs e)
         {
             button7.Focus();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void quick_sort_Click(object sender, EventArgs e)
+        {
+            button7.Focus();
+            Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            main_sorts.QuickSort();
+            cout_result();
+        }
+
+        private void introsort_Click(object sender, EventArgs e)
         {
             button7.Focus();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void LSD_sort_Click(object sender, EventArgs e)
         {
             button7.Focus();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            button7.Focus();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
+        private void data_save_Click(object sender, EventArgs e)
         {
             button7.Focus();
         }
@@ -126,5 +135,6 @@ namespace Sorts_interface
                 }
             }
         }
+
     }
 }

@@ -35,7 +35,7 @@
             this.Insertion_sot = new System.Windows.Forms.Button();
             this.quick_sort = new System.Windows.Forms.Button();
             this.TimeOut = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.data_save = new System.Windows.Forms.Button();
             this.array_size_input = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.LSD_sort.TabIndex = 1;
             this.LSD_sort.Text = "LSD sort";
             this.LSD_sort.UseVisualStyleBackColor = false;
-            this.LSD_sort.Click += new System.EventHandler(this.button2_Click);
+            this.LSD_sort.Click += new System.EventHandler(this.LSD_sort_Click);
             // 
             // introsort
             // 
@@ -101,7 +101,7 @@
             this.introsort.TabIndex = 2;
             this.introsort.Text = "introsort";
             this.introsort.UseVisualStyleBackColor = false;
-            this.introsort.Click += new System.EventHandler(this.button3_Click);
+            this.introsort.Click += new System.EventHandler(this.introsort_Click);
             // 
             // Insertion_sot
             // 
@@ -120,7 +120,7 @@
             this.Insertion_sot.TabIndex = 3;
             this.Insertion_sot.Text = "Insertion sort";
             this.Insertion_sot.UseVisualStyleBackColor = false;
-            this.Insertion_sot.Click += new System.EventHandler(this.button4_Click);
+            this.Insertion_sot.Click += new System.EventHandler(this.Insertion_sort_Click);
             // 
             // quick_sort
             // 
@@ -140,7 +140,7 @@
             this.quick_sort.TabIndex = 4;
             this.quick_sort.Text = "quick sort";
             this.quick_sort.UseVisualStyleBackColor = false;
-            this.quick_sort.Click += new System.EventHandler(this.button5_Click);
+            this.quick_sort.Click += new System.EventHandler(this.quick_sort_Click);
             // 
             // TimeOut
             // 
@@ -155,25 +155,25 @@
             this.TimeOut.Text = "Нет данных";
             this.TimeOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button6
+            // data_save
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.AutoSize = true;
-            this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.Aquamarine;
-            this.button6.Location = new System.Drawing.Point(634, 474);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(141, 47);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Save data";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.data_save.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.data_save.AutoSize = true;
+            this.data_save.BackColor = System.Drawing.Color.Transparent;
+            this.data_save.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.data_save.FlatAppearance.BorderSize = 2;
+            this.data_save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.data_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(64)))), ((int)(((byte)(171)))));
+            this.data_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.data_save.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.data_save.ForeColor = System.Drawing.Color.Aquamarine;
+            this.data_save.Location = new System.Drawing.Point(634, 474);
+            this.data_save.Name = "data_save";
+            this.data_save.Size = new System.Drawing.Size(141, 47);
+            this.data_save.TabIndex = 6;
+            this.data_save.Text = "Save data";
+            this.data_save.UseVisualStyleBackColor = false;
+            this.data_save.Click += new System.EventHandler(this.data_save_Click);
             // 
             // array_size_input
             // 
@@ -293,7 +293,7 @@
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.array_size_input);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.data_save);
             this.Controls.Add(this.TimeOut);
             this.Controls.Add(this.quick_sort);
             this.Controls.Add(this.Insertion_sot);
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Button Insertion_sot;
         private System.Windows.Forms.Button quick_sort;
         private System.Windows.Forms.Label TimeOut;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button data_save;
         private System.Windows.Forms.MaskedTextBox array_size_input;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
