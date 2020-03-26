@@ -30,8 +30,13 @@ namespace Sorts_interface
                 Text += System.Environment.NewLine;
             }
             ConsoleOut2.Text = Text;
-            TimeOut.Text = "Time: " + main_sorts.time;
+            if (main_sorts.time == 0)
+                TimeOut.Text = "Time < 0.001";
+            else
+                TimeOut.Text = "Time: " + Convert.ToString(main_sorts.time);
             Cursor = System.Windows.Forms.Cursors.Arrow;
+            ConsoleOut.Text += System.Environment.NewLine;
+            ConsoleOut.Text += "Массив отсортирован";
         }
         private void bubble_sort_Click(object sender, EventArgs e)
         {
@@ -57,6 +62,9 @@ namespace Sorts_interface
         private void introsort_Click(object sender, EventArgs e)
         {
             button7.Focus();
+            Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            main_sorts.Introsort();
+            cout_result();
         }
 
         private void LSD_sort_Click(object sender, EventArgs e)

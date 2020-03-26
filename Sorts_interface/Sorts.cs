@@ -102,5 +102,181 @@ namespace Sorts_interface
                 if (right > pivot)
                     realQuickSort(arr, pivot + 1, right);
         }
+
+        public void Introsort()
+        {
+            Int64 time1, time2;
+            for (int i = 0; i < N; i++)
+            {
+                array[i] = original_array[i];
+            }
+            time1 = DateTime.Now.Ticks;
+            realIntrosort(0, array.Length - 1, array.Length, 1);
+            time2 = DateTime.Now.Ticks;
+            time = (double)(time2 - time1) / (double)10000000;
+        }
+
+        /**
+         * Входные данные: два указателя на ячейки памяти
+         *
+         * Выходные данные: две ячейки памяти
+         *
+         * Меняет местами данные, хранящиеся в двух ячейках памяти
+         *
+         * @param *a - указатель на ячейку памяти
+         * @param *b - указатель на ячейку памяти
+         */
+        unsafe private void swap(int a, int b)
+        {
+            int temp = array[a];
+            array[a] = array[b];
+            array[b] = temp;
+        }
+
+        /**
+         * Входные данные: указатель на первый элемент участка массива и указатель на последний элемент участка миссива
+         *
+         * Выходные данные: часть массива приведённая к куче, где внизу самые большие числа
+         *
+         * Функция начиная от n/2-1 элемента начинает "просеивать" их через дерео, чтобы получить дерево сортировки
+         *
+         * @param *left - указатель на первый элемент участка массива
+         * @param *right - указатель на последний элемент участка массива
+         */
+        private void HeapSetUp( int left, int right) // приводим к куче, чтобы a[i] <= a[2*i+1] && a[i] <=a[i*2+2]
+        {
+            int n = right -left;
+            for (int i = n / 2 - 1; i >= 0; i--) // начинаем просеивать с n/2-1 элемента
+            {
+                for (int j = i; j <= n / 2 - 1;)
+                {
+                    if ((j * 2 + 2) > (n - 1))
+                    {
+                        if (array[left+ j * 2 + 1] < array[left+j])
+                        {
+                            swap(left+ j * 2 + 1, left+j);
+                            j = j * 2 + 1;
+                        }
+                        else break;
+                    }
+                    else if (array[left+j * 2 + 1] < array[left+j * 2 + 2] && (array[left+j * 2 + 1] < array[left+j]))
+                    {
+                        swap(left+j * 2 + 1, left+j);
+                        j = j * 2 + 1;
+                    }
+                    else if (array[left+j * 2 + 2] < array[left+j])
+                    {
+                        swap(left+j * 2 + 2, left+j);
+                        j = j * 2 + 2;
+                    }
+                    else break;
+                }
+            }
+        }
+
+        /**
+         * Входные данные: указатель на первый элемент участка массива и указатель на последний элемент участка миссива
+         *
+         * Выходные данные: отсортированная часть массива
+         *
+         * Функция меняет местами 1 и последний элемент текущего дерева и "просеивает" новую вершину через дерево,
+         * размер которого уменьшается на один (то есть правая граница массива смещается на единицу влево).
+         * Это проделываем до тех пор, пока масив не будет состоять из одного элемента
+         *
+         * @param *left - указатель на первый элемент участка массива
+         * @param *right - указатель на последний элемент участка массива
+         */
+        private void HeapSort( int left, int right)
+        {
+            HeapSetUp( left, right);// сначала приводим к куче, где большие элементы внизу
+            int n = right - left;
+            for (int i = n; i > 0; i--)//после каждой итерации дерево становится отсортированным с конца на ещё на один элемент
+                                       //поэтому мы работаем каждый раз с деревом меньшим на 1 элемент с конца
+            {
+                swap(left, left+ i - 1); // ставим наименьший элемент текущего дерева в конец и элемент с конца просеиваем через всё оставшееся дерево
+                for (int j = 0; j < (i + 1) / 2 - 1;)
+                {
+                    if ((j * 2 + 2) >= (i - 1))
+                    {
+                        if (left+j * 2 + 1 < left+j)
+                        {
+                            swap(array[left+j * 2 + 1], array[left+j]);
+                            j = j * 2 + 1;
+                        }
+                        else break;
+                    }
+                    else if (array[left+j * 2 + 1] < array[left+j * 2 + 2] && (array[left+j * 2 + 1] < array[left+j]))
+                    {
+                        swap(left+j * 2 + 1, left+j);
+                        j = j * 2 + 1;
+                    }
+                    else if (array[left+j * 2 + 2] < array[left+j])
+                    {
+                        swap(left+j * 2 + 2, left+j);
+                        j = j * 2 + 2;
+                    }
+                    else break;
+                }
+            }
+            for (int i = 0; i < n / 2; i++) //выписываем дерево с конца
+                swap(left+i, left+n - i - 1);
+        }
+
+        /**
+         * Входные данные: указатель на начало массива и номер элемента с которого нужно сортровать и номер элемнта до которого нужно сортировать
+         * А также кольчество элементов массива при первом вызове функции и глубина рекурсии
+         *
+         * Выходные данные: отсортированныя часть массива
+         *
+         * Функция в завиимости от глубины рекурсии сортирует участок массива быстрой сортировкой и вызывает сама себя, если требуется
+         * или сортирует участок массива пирамидальной сортировкой с помощью вызова соответствующей процедуры
+         *
+         * @param *arr - указатель на ячейку памяти
+         * @param left - номер первого элемента массива в памяти
+         * @param right - номер последнего элемента массива в памяти
+         * @param actuall_len - изначальное количество элементов массива
+         * @param deep - глубина рекурсии (изначально == 1)
+         */
+        private void realIntrosort(int left, int right, int actuall_len, int deep)
+        {
+            if (System.Math.Log(actuall_len) < deep)
+            {
+                HeapSort( left, right);
+            }
+            else
+            {
+                int pivot; // разрешающий элемент
+                int l_hold = left; //левая граница
+                int r_hold = right; // правая граница
+                pivot = array[left];
+                while (left < right) // пока границы не сомкнутся
+                {
+                    while ((array[right] >= pivot) && (left < right))
+                        right--; // сдвигаем правую границу пока элемент [right] больше [pivot]
+                    if (left != right) // если границы не сомкнулись
+                    {
+                        array[left] = array[right]; // перемещаем элемент [right] на место разрешающего
+                        left++; // сдвигаем левую границу вправо
+                    }
+                    while ((array[left] <= pivot) && (left < right))
+                        left++; // сдвигаем левую границу пока элемент [left] меньше [pivot]
+                    if (left != right) // если границы не сомкнулись
+                    {
+                        array[right] = array[left]; // перемещаем элемент [left] на место [right]
+                        right--; // сдвигаем правую границу вправо
+                    }
+                }
+                array[left] = pivot; // ставим разрешающий элемент на место
+                pivot = left;
+                left = l_hold;
+                right = r_hold;
+                deep++;
+                if (left < pivot) // Рекурсивно вызываем сортировку для левой и правой части массива
+                    realIntrosort( left, pivot - 1, actuall_len, deep);
+                if (right > pivot)
+                    realIntrosort( pivot + 1, right, actuall_len, deep);
+
+            }
+        }
     }
 }
