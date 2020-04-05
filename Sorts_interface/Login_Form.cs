@@ -49,6 +49,9 @@ namespace Sorts_interface
         private void Insertion_sort_Click(object sender, EventArgs e)
         {
             button7.Focus();
+            main_sorts.Insertion_sort();
+            Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            cout_result();
         }
 
         private void quick_sort_Click(object sender, EventArgs e)
@@ -70,6 +73,9 @@ namespace Sorts_interface
         private void LSD_sort_Click(object sender, EventArgs e)
         {
             button7.Focus();
+            Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            main_sorts.LSD();
+            cout_result();
         }
 
         private void data_save_Click(object sender, EventArgs e)

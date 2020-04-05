@@ -103,6 +103,99 @@ namespace Sorts_interface
                     realQuickSort(arr, pivot + 1, right);
         }
 
+        public void Insertion_sort()
+        {
+            Int64 time1, time2;
+            for (int i = 0; i < N; i++)
+            {
+                array[i] = original_array[i];
+            }
+            time1 = DateTime.Now.Ticks;
+            int key, j;
+            for(int i =1; i < array.Length; i++)
+            {
+                key = array[i];
+                j = i - 1;
+                while(j >= 0 && array[j]>key)
+                {
+                    array[j + 1] = array[j];
+                    j = j - 1;
+                }
+                array[j + 1] = key;
+            }
+            time2 = DateTime.Now.Ticks;
+            time = (double)(time2 - time1) / (double)10000000;
+        }
+
+        public void LSD()
+        {
+            Int64 time1, time2;
+            for (int i = 0; i < N; i++)
+            {
+                array[i] = original_array[i];
+            }
+            time1 = DateTime.Now.Ticks;
+            LSDSort(0, N - 1);
+            time2 = DateTime.Now.Ticks;
+            time = (double)(time2 - time1) / (double)10000000;
+        }
+        private Int64 Getdigit( Int64 number, int digit)
+        {
+            for (int i = digit; i > 1; i--)
+            {
+                number /= 10;
+            }
+            number %= 10;
+            return number;
+        }
+
+        private void LSDSort(int first, int last)
+        {
+            int length = N;
+            Int64[] buffer = new Int64[length];
+            Int64[] first_u = new Int64[length];
+            for (int i = 0; i < length; i++)
+                first_u[i] = array[first+i] + 2147483648;
+            int[] indexes_of_numbers = new int[10];
+            Int64 max = (first_u[0]);
+            int digits = 0;
+            for (int i = 1; i < length; i++)
+                if (max < (first_u[i]))
+                    max = (first_u[i]);
+            while (max != 0)
+            {
+                digits++;
+                max /= 10;
+            }
+            for (int i = 1; i <= digits; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    indexes_of_numbers[j] = 0;
+                }
+                for (int j = 0; j < length; j++)
+                {
+                    indexes_of_numbers[Getdigit(first_u[j], i)]++;
+                }
+                int count = 0;
+                for (int j = 0, temp; j < 10; j++)
+                {
+                    temp = indexes_of_numbers[j];
+                    indexes_of_numbers[j] = count;
+                    count += temp;
+                }
+                for (int j = 0; j < length; j++)
+                {
+                    buffer[indexes_of_numbers[Getdigit(first_u[j], i)]] = first_u[j];
+                    indexes_of_numbers[Getdigit(first_u[j], i)]++;
+                }
+                for (int j = 0; j < length; j++)
+                    first_u[j] = buffer[j];
+            }
+            for (int j = 0; j < length; j++)
+                array[first+j] = (int)(first_u[j] - 2147483648);
+        }
+
         public void Introsort()
         {
             Int64 time1, time2;
@@ -145,7 +238,7 @@ namespace Sorts_interface
          */
         private void HeapSetUp( int left, int right) // приводим к куче, чтобы a[i] <= a[2*i+1] && a[i] <=a[i*2+2]
         {
-            int n = right -left;
+            int n = right -left+1;
             for (int i = n / 2 - 1; i >= 0; i--) // начинаем просеивать с n/2-1 элемента
             {
                 for (int j = i; j <= n / 2 - 1;)
@@ -189,18 +282,18 @@ namespace Sorts_interface
         private void HeapSort( int left, int right)
         {
             HeapSetUp( left, right);// сначала приводим к куче, где большие элементы внизу
-            int n = right - left;
+            int n = right - left + 1;
             for (int i = n; i > 0; i--)//после каждой итерации дерево становится отсортированным с конца на ещё на один элемент
                                        //поэтому мы работаем каждый раз с деревом меньшим на 1 элемент с конца
             {
-                swap(left, left+ i - 1); // ставим наименьший элемент текущего дерева в конец и элемент с конца просеиваем через всё оставшееся дерево
+                swap((int)left, (int)(left+ i - 1)); // ставим наименьший элемент текущего дерева в конец и элемент с конца просеиваем через всё оставшееся дерево
                 for (int j = 0; j < (i + 1) / 2 - 1;)
                 {
                     if ((j * 2 + 2) >= (i - 1))
                     {
-                        if (left+j * 2 + 1 < left+j)
+                        if (array[left+j * 2 + 1] < array[left+j])
                         {
-                            swap(array[left+j * 2 + 1], array[left+j]);
+                            swap(left+j * 2 + 1, left+j);
                             j = j * 2 + 1;
                         }
                         else break;
