@@ -13,7 +13,7 @@ namespace Sorts_interface
         static private int[] original_array = new int[N];
         public int[] array = new int[N];
         public Double time = 0;
-        static public string last_sort = null;
+        public string last_sort = null;
         public Sorts()
         {
             N = 0;
@@ -37,6 +37,7 @@ namespace Sorts_interface
                 array[i] = original_array[i];
             }
             str = "Успех";
+            last_sort = null;
             return str;
         }
         public void bubbleSort()
@@ -220,6 +221,7 @@ namespace Sorts_interface
             realIntrosort(0, array.Length - 1, array.Length, 1);
             time2 = DateTime.Now.Ticks;
             time = (double)(time2 - time1) / (double)10000000;
+            last_sort = "Introsort";
         }
 
         /**

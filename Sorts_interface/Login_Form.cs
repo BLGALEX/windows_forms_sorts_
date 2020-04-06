@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO
+using System.IO;
 
 namespace Sorts_interface
-{
+{ 
     public partial class Login_Form : Form
     {
         Sorts main_sorts = new Sorts();
@@ -18,6 +18,8 @@ namespace Sorts_interface
         {
             InitializeComponent();
             button7.Focus();
+            if(File.Exists("Output.txt"))
+                File.Delete("Output.txt");
         }
 
         private void cout_result()
@@ -30,14 +32,6 @@ namespace Sorts_interface
                 ConsoleOut2.Text = "...";
                 return;
             }
-           /* ConsoleOut2.Text = "";
-            String Text = new string('1', main_sorts.array.Length * 7);
-            Text = "";
-            for (int i = 0; i < main_sorts.array.Length; i++)
-            {
-                Text += main_sorts.array[i];
-                Text += System.Environment.NewLine;
-            }*/
             if (main_sorts.time == 0)
                 TimeOut.Text = "Time < 0.001";
             else
@@ -94,9 +88,13 @@ namespace Sorts_interface
         private void data_save_Click(object sender, EventArgs e)
         {
             button7.Focus();
-            string path = "Output.txt";
-            StreamWriter text_file = new StreamWriter(path, true, System.Text.Encoding.Default);
-
+            if (main_sorts.last_sort == null) return;
+            File.AppendAllText("Output.txt", "Сосртировка: " + main_sorts.last_sort + Environment.NewLine);
+            File.AppendAllText("Output.txt", "Количество элементов: " + Convert.ToString(main_sorts.array.Length) + Environment.NewLine);
+            File.AppendAllText("Output.txt", "Время: " + Convert.ToString(main_sorts.time) + Environment.NewLine);
+            File.AppendAllText("Output.txt", Environment.NewLine);
+            ConsoleOut.Text += Environment.NewLine;
+            ConsoleOut.Text += "Данные успешно сохранены в файл";
         }
 
         Point last_point;
