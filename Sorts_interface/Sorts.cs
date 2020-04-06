@@ -13,7 +13,7 @@ namespace Sorts_interface
         static private int[] original_array = new int[N];
         public int[] array = new int[N];
         public Double time = 0;
-
+        static public string last_sort = null;
         public Sorts()
         {
             N = 0;
@@ -34,12 +34,14 @@ namespace Sorts_interface
             for (int i = 0; i < N; i++)
             {
                 original_array[i] = rand.Next() % 32768;
+                array[i] = original_array[i];
             }
             str = "Успех";
             return str;
         }
         public void bubbleSort()
         {
+            if (N == 0) return;
             int temp;
             Int64 time1, time2;
             for (int i =0; i<N;i++)
@@ -57,9 +59,11 @@ namespace Sorts_interface
                     }
             time2 = DateTime.Now.Ticks;
             time = (double)(time2 - time1) / (double)10000000;
+            last_sort = "Bubble sort";
         }
         public void QuickSort()
         {
+            if (N == 0) return;
             Int64 time1, time2;
             for (int i = 0; i < N; i++)
             {
@@ -69,6 +73,7 @@ namespace Sorts_interface
             realQuickSort(array, 0, array.Length - 1);
             time2 = DateTime.Now.Ticks;
             time = (double)(time2 - time1) / (double)10000000;
+            last_sort = "Quick sort";
         }
         private void realQuickSort(int[] arr, int left, int right)
         {
@@ -105,30 +110,33 @@ namespace Sorts_interface
 
         public void Insertion_sort()
         {
-            Int64 time1, time2;
-            for (int i = 0; i < N; i++)
-            {
-                array[i] = original_array[i];
-            }
-            time1 = DateTime.Now.Ticks;
-            int key, j;
-            for(int i =1; i < array.Length; i++)
-            {
-                key = array[i];
-                j = i - 1;
-                while(j >= 0 && array[j]>key)
+            if (N == 0) return;
+                Int64 time1, time2;
+                for (int i = 0; i < N; i++)
                 {
-                    array[j + 1] = array[j];
-                    j = j - 1;
+                    array[i] = original_array[i];
                 }
-                array[j + 1] = key;
-            }
-            time2 = DateTime.Now.Ticks;
-            time = (double)(time2 - time1) / (double)10000000;
+                time1 = DateTime.Now.Ticks;
+                int key, j;
+                for (int i = 1; i < array.Length; i++)
+                {
+                    key = array[i];
+                    j = i - 1;
+                    while (j >= 0 && array[j] > key)
+                    {
+                        array[j + 1] = array[j];
+                        j = j - 1;
+                    }
+                    array[j + 1] = key;
+                }
+                time2 = DateTime.Now.Ticks;
+                time = (double)(time2 - time1) / (double)10000000;
+            last_sort = "Insertion sort";
         }
 
         public void LSD()
         {
+            if (N == 0) return;
             Int64 time1, time2;
             for (int i = 0; i < N; i++)
             {
@@ -138,25 +146,28 @@ namespace Sorts_interface
             LSDSort(0, N - 1);
             time2 = DateTime.Now.Ticks;
             time = (double)(time2 - time1) / (double)10000000;
+            last_sort = "LSD sort";
         }
-        private Int64 Getdigit( Int64 number, int digit)
+        private int Getdigit(Int64 number, int digit)
         {
-            for (int i = digit; i > 1; i--)
+            while(digit > 1)
             {
                 number /= 10;
+                digit--;
             }
-            number %= 10;
-            return number;
+            number %= 32768;
+            return (int)number;
         }
 
         private void LSDSort(int first, int last)
         {
+            int x;
             int length = N;
             Int64[] buffer = new Int64[length];
             Int64[] first_u = new Int64[length];
             for (int i = 0; i < length; i++)
                 first_u[i] = array[first+i] + 2147483648;
-            int[] indexes_of_numbers = new int[10];
+            int[] indexes_of_numbers = new int[32768];
             Int64 max = (first_u[0]);
             int digits = 0;
             for (int i = 1; i < length; i++)
@@ -165,11 +176,11 @@ namespace Sorts_interface
             while (max != 0)
             {
                 digits++;
-                max /= 10;
+                max /= 32768;
             }
             for (int i = 1; i <= digits; i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < 32768; j++)
                 {
                     indexes_of_numbers[j] = 0;
                 }
@@ -186,8 +197,9 @@ namespace Sorts_interface
                 }
                 for (int j = 0; j < length; j++)
                 {
-                    buffer[indexes_of_numbers[Getdigit(first_u[j], i)]] = first_u[j];
-                    indexes_of_numbers[Getdigit(first_u[j], i)]++;
+                    x = Getdigit(first_u[j], i);
+                    buffer[indexes_of_numbers[x]] = first_u[j];
+                    indexes_of_numbers[x]++;
                 }
                 for (int j = 0; j < length; j++)
                     first_u[j] = buffer[j];
@@ -198,6 +210,7 @@ namespace Sorts_interface
 
         public void Introsort()
         {
+            if (N == 0) return;
             Int64 time1, time2;
             for (int i = 0; i < N; i++)
             {

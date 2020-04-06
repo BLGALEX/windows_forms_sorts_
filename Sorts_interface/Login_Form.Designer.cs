@@ -43,6 +43,7 @@
             this.button9 = new System.Windows.Forms.Button();
             this.ConsoleOut = new System.Windows.Forms.TextBox();
             this.ConsoleOut2 = new System.Windows.Forms.TextBox();
+            this.ShowArray = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bubble_sort
@@ -274,9 +275,27 @@
             this.ConsoleOut2.Multiline = true;
             this.ConsoleOut2.Name = "ConsoleOut2";
             this.ConsoleOut2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.ConsoleOut2.Size = new System.Drawing.Size(147, 409);
+            this.ConsoleOut2.Size = new System.Drawing.Size(147, 349);
             this.ConsoleOut2.TabIndex = 14;
             this.ConsoleOut2.Text = "Ожидание...";
+            // 
+            // ShowArray
+            // 
+            this.ShowArray.BackColor = System.Drawing.Color.Transparent;
+            this.ShowArray.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ShowArray.FlatAppearance.BorderColor = System.Drawing.Color.Aquamarine;
+            this.ShowArray.FlatAppearance.BorderSize = 2;
+            this.ShowArray.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.ShowArray.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumOrchid;
+            this.ShowArray.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShowArray.ForeColor = System.Drawing.Color.Aquamarine;
+            this.ShowArray.Location = new System.Drawing.Point(501, 410);
+            this.ShowArray.Name = "ShowArray";
+            this.ShowArray.Size = new System.Drawing.Size(147, 40);
+            this.ShowArray.TabIndex = 15;
+            this.ShowArray.Text = "Show array";
+            this.ShowArray.UseVisualStyleBackColor = false;
+            this.ShowArray.Click += new System.EventHandler(this.ShowArray_Click);
             // 
             // Login_Form
             // 
@@ -286,6 +305,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.ShowArray);
             this.Controls.Add(this.ConsoleOut2);
             this.Controls.Add(this.ConsoleOut);
             this.Controls.Add(this.button9);
@@ -327,6 +347,6 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TextBox ConsoleOut;
         private System.Windows.Forms.TextBox ConsoleOut2;
-      
+        private System.Windows.Forms.Button ShowArray;
     }
 }
